@@ -39,7 +39,7 @@ class StatsD {
     }
 
     // Send
-    private function send($value, $rate = NULL) {
+    public function send($value, $rate = NULL) {
         $fp = fsockopen('udp://' . $this->host, $this->port, $errno, $errstr);
         // Will show warning if not opened, and return false
         if ($fp) {
